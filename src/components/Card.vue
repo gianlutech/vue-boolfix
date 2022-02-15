@@ -4,10 +4,10 @@
       <li>{{ item.title || item.name }}</li>
       <li>{{ item.original_title || item.original_name }}</li>
       <li>
-        <img v-if="hasFlag" :src="flagSrc" :alt="item.original_lenguage" />
-        <span v-else>{{ item.original_lenguage }}</span>
+        <img v-if="hasFlag" :src="flagSrc" :alt="item.original_language" />
+        <span v-else>{{ item.original_language }}</span>
       </li>
-      <li>{{ item.vote_avarage }}</li>
+      <li>{{ item.vote_average }}</li>
     </ul>
   </div>
 </template>
@@ -25,10 +25,10 @@ export default {
 
   computed: {
     flagSrc() {
-      return require(`@/assets/img/${this.item.original_lenguage}.png`);
+      return require(`../assets/img/${this.item.original_language}.png`);
     },
     hasFlag() {
-      return this.flags.includes(this.item.original_lenguage);
+      return this.flags.includes(this.item.original_language);
     },
   },
 };
