@@ -1,7 +1,19 @@
 <template>
   <div>
     <header>
-      <Search @search="search" />
+      <div
+        class="
+          container-fluid
+          d-flex
+          justify-content-between
+          align-items-center
+          p-5
+          bg-dark
+        "
+      >
+        <h1 class="text-danger">BOOLFIX</h1>
+        <Search @search="search" />
+      </div>
     </header>
     <main>
       <section id="movies">
@@ -33,7 +45,7 @@ export default {
       api: {
         baseUri: "https://api.themoviedb.org/3",
         key: "c7acdad0ed697be61f76da71c493064e",
-        lenguage: "it-IT",
+        language: "it-IT",
       },
     };
   },
@@ -46,12 +58,12 @@ export default {
         return;
       }
 
-      const { key, lenguage } = this.api;
+      const { key, language } = this.api;
       const config = {
         params: {
           api_key: key,
           query: word,
-          lenguage,
+          language,
         },
       };
 
