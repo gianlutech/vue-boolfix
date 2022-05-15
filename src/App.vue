@@ -1,29 +1,28 @@
 <template>
   <div>
-    <header>
+    <header class="bg-dark">
       <div
-        class="
-          container-fluid
-          d-flex
-          justify-content-between
-          align-items-center
-          p-5
-          bg-dark
-        "
+        class="container d-flex justify-content-between align-items-center py-4"
       >
         <h1 class="text-danger">BOOLFIX</h1>
         <Search @search="search" />
       </div>
     </header>
-    <main>
-      <section id="movies">
-        <h2>Movies</h2>
-        <Card v-for="movie in movies" :key="movie.id" :item="movie" />
-      </section>
-      <section id="series">
-        <h2>Series</h2>
-        <Card v-for="serie in series" :key="serie.id" :item="serie" />
-      </section>
+    <main class="bg-grey">
+      <div class="container py-4">
+        <section id="movies">
+          <h2 class="text-danger">Movies</h2>
+          <div class="card-settings">
+            <Card v-for="movie in movies" :key="movie.id" :item="movie" />
+          </div>
+        </section>
+        <section id="series">
+          <h2 class="text-danger">Series</h2>
+          <div class="card-settings">
+            <Card v-for="serie in series" :key="serie.id" :item="serie" />
+          </div>
+        </section>
+      </div>
     </main>
   </div>
 </template>
@@ -88,4 +87,20 @@ export default {
 
 
 <style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  min-height: 100vh;
+  background-color: #434343;
+}
+.card-settings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-basis: 30%;
+}
 </style>
